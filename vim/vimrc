@@ -1,0 +1,65 @@
+" .vimrc
+set nocompatible
+set showmode
+set showcmd
+set title
+set number
+set mouse=a
+set backspace=2
+set showmatch
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+set hlsearch
+
+set colorcolumn=80
+
+set spelllang=en_gb
+autocmd FileType tex,bib,plaintex,markdown set spell
+
+autocmd FileType c,h,cpp,hpp,cc setlocal noexpandtab tabstop=8 shiftwidth=8 softtabstop=8
+autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+"highlight WhitespaceEOL ctermbg=yellow guibg=red
+"match WhitespaceEOL /\s\+$/
+"autocmd ColorScheme * highlight WhitespaceEOL ctermbg=red guibg=red
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+
+"highlight WhitespaceEOL ctermbg=yellow guibg=red
+"match WhitespaceEOL /\s\+$/
+"autocmd ColorScheme * highlight WhitespaceEOL ctermbg=red guibg=red
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+
+syntax on
+colorscheme jellybeans
+
+" Use x11 clipboard
+if has('xterm_clipboard')
+    if version >= 730
+        set clipboard=unnamedplus
+    else
+        noremap Y "+Y
+        noremap y "+y
+        noremap yy "+yy
+        noremap c "+c
+        noremap C "+C
+        noremap d "+d
+        nnoremap dd "+dd
+        noremap p "+p
+        noremap P "+P
+        noremap r "+r
+        noremap R "+R
+        noremap c "+c
+        noremap C "+C
+        noremap cc "+cc
+    endif
+endif
