@@ -1,4 +1,8 @@
-install: vim git
+install: submodules vim git
+
+submodules:
+	git submodule init
+	git submodule update
 
 vim:
 	ln -s ./vim ~/.vim
