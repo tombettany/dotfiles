@@ -1,0 +1,5 @@
+[user]
+	email = tom@kano.me
+	name = Tom Bettany
+[core]
+    editor = vim
