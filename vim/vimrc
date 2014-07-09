@@ -12,6 +12,11 @@ Plugin 'gmarik/Vundle.vim'
 
 " Syntastic
 Plugin 'scrooloose/syntastic'
+" Tagbar
+" requires exuberant-ctags
+Plugin 'majutsushi/tagbar'
+" SuperTab
+Plugin 'vim-scripts/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
