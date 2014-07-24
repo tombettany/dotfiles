@@ -43,6 +43,7 @@ set number
 set mouse=a
 set backspace=2
 set showmatch
+set ruler
 
 set expandtab
 set tabstop=4
