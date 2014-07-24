@@ -57,8 +57,8 @@ set colorcolumn=80
 set spelllang=en_gb
 autocmd FileType tex,bib,plaintex,markdown set spell
 
-autocmd FileType c,h,cpp,hpp,cc setlocal noexpandtab tabstop=8 shiftwidth=8 softtabstop=8
-autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType c,h,cpp,hpp,cc setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType ruby setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 "highlight WhitespaceEOL ctermbg=yellow guibg=red
 "match WhitespaceEOL /\s\+$/
