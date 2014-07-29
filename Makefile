@@ -4,7 +4,7 @@ install: submodules vim git
 
 submodules:
 	git submodule init
-	git submodule update
+	git submodule update --remote
 
 vim:
 	ln -s $(CWD)/vim ~/.vim
