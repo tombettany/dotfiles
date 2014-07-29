@@ -1,3 +1,5 @@
+CWD=$(shell pwd)
+
 install: submodules vim git
 
 submodules:
@@ -5,9 +7,9 @@ submodules:
 	git submodule update
 
 vim:
-	ln -s ./vim ~/.vim
+	ln -s $(CWD)/vim ~/.vim
 	ln -s ~/.vim/vimrc ~/.vimrc
 	vim +PluginInstall +qall
 
 git:
-	ln -s ~/git/gitconfig ~/.gitconfig
+	ln -s $(CWD)/git/gitconfig ~/.gitconfig
