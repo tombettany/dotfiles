@@ -1,6 +1,6 @@
 CWD=$(shell pwd)
 
-install: submodules vim git
+install: submodules vim git python
 
 submodules:
 	git submodule init
@@ -13,3 +13,6 @@ vim:
 
 git:
 	ln -s $(CWD)/git/gitconfig ~/.gitconfig
+
+python:
+	ln -s $(CWD)/python/pylintrc ~/.pylintrc
