@@ -64,7 +64,7 @@ autocmd FileType tex,bib,plaintex,markdown set spell
 autocmd FileType c,h,cpp,hpp,cc setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType ruby setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-au BufNewFile,BufRead *.soy set filetype=html
+" au BufNewFile,BufRead *.soy set filetype=html
 
 "highlight WhitespaceEOL ctermbg=yellow guibg=red
 "match WhitespaceEOL /\s\+$/
