@@ -19,6 +19,10 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/supertab'
 " Switch between c source and headers
 Plugin 'vim-scripts/a.vim'
+" Line diff
+Plugin 'AndrewRadev/linediff.vim'
+" Tab merge
+Plugin 'vim-scripts/Tabmerge'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
