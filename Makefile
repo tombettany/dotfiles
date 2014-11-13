@@ -7,12 +7,12 @@ submodules:
 	git submodule update --remote
 
 vim:
-	ln -s $(CWD)/vim ~/.vim
-	ln -s ~/.vim/vimrc ~/.vimrc
+	ln -sf $(CWD)/vim ~/.vim
+	ln -sf ~/.vim/vimrc ~/.vimrc
 	vim +PluginInstall +qall
 
 git:
-	ln -s $(CWD)/git/gitconfig ~/.gitconfig
+	ln -sf $(CWD)/git/gitconfig ~/.gitconfig
 
 python:
-	ln -s $(CWD)/python/pylintrc ~/.pylintrc
+	ln -sf $(CWD)/python/pylintrc ~/.pylintrc
