@@ -65,6 +65,7 @@ autocmd FileType c,h,cpp,hpp,cc setlocal expandtab tabstop=4 shiftwidth=4 softta
 autocmd FileType ruby setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " au BufNewFile,BufRead *.soy set filetype=html
+au BufNewFile,BufRead *.md set filetype=markdown
 
 " Prevent tabexpand in Makefiles
 au BufNewFile,BufRead Makefile set noexpandtab
