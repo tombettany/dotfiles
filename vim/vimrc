@@ -61,10 +61,13 @@ set colorcolumn=80
 set spelllang=en_gb
 autocmd FileType tex,bib,plaintex,markdown set spell
 
-autocmd FileType c,h,cpp,hpp,cc setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType c,h,cpp,hpp,cc setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType ruby setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " au BufNewFile,BufRead *.soy set filetype=html
+
+" Prevent tabexpand in Makefiles
+au BufNewFile,BufRead Makefile set noexpandtab
 
 "highlight WhitespaceEOL ctermbg=yellow guibg=red
 "match WhitespaceEOL /\s\+$/
