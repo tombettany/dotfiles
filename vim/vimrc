@@ -30,6 +30,7 @@ Plugin 'digitaltoad/vim-jade'
 " Provide stylus syntax highlighting
 Plugin 'wavded/vim-stylus'
 " Git plugin
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
