@@ -25,6 +25,11 @@ Plugin 'AndrewRadev/linediff.vim'
 Plugin 'vim-scripts/Tabmerge'
 " Markdown previewer
 Plugin 'suan/vim-instant-markdown'
+" Provide jade syntax highlighting
+Plugin 'digitaltoad/vim-jade'
+" Provide stylus syntax highlighting
+Plugin 'wavded/vim-stylus'
+" Git plugin
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,7 +71,7 @@ autocmd FileType tex,bib,plaintex,markdown set spell
 autocmd FileType c,h,cpp,hpp,cc setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType ruby setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-" au BufNewFile,BufRead *.soy set filetype=html
+au BufNewFile,BufRead *.soy set filetype=html
 au BufNewFile,BufRead *.md set filetype=markdown
 
 " Prevent tabexpand in Makefiles
