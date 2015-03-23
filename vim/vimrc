@@ -118,3 +118,9 @@ if has('xterm_clipboard')
         noremap cc "+cc
     endif
 endif
+
+" Disable arrows
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
