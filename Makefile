@@ -1,6 +1,6 @@
 CWD=$(shell pwd)
 
-install: submodules vim git python
+install: submodules vim git python js
 
 submodules:
 	git submodule init
@@ -16,5 +16,8 @@ git: .PHONEY
 
 python: .PHONEY
 	ln -sf $(CWD)/python/pylintrc ~/.pylintrc
+
+js: .PHONEY
+	ln -sf $(CWD)/python/jshintrc ~/.jshintrc
 
 .PHONEY:

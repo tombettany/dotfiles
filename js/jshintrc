@@ -1,0 +1,17 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "maxdepth": 3,
+    "noarg": true,
+    "nonbsp": true,
+    "undef": true,
+    "unused": true,
+
+    "indent": 4,
+    "maxlen": 80,
+    "quotmark": "single",
+
+
+    "browser": true,
+}
