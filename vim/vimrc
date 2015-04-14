@@ -31,6 +31,8 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'wavded/vim-stylus'
 " Git plugin
 Plugin 'tpope/vim-fugitive'
+" Surround
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
