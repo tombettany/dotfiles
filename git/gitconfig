@@ -3,6 +3,8 @@
 	name = Tom Bettany
 [core]
     editor = vim
+[color]
+	ui = auto
 [diff]
 	tool = vimdiff
 [difftool]
