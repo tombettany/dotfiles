@@ -62,9 +62,15 @@ set ruler
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set smarttab
 set softtabstop=4
+set shiftround
 set autoindent
+set smartindent
 set hlsearch
+
+set splitright
+set splitbelow
 
 set colorcolumn=80
 
@@ -76,14 +82,6 @@ autocmd FileType ruby setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Prevent tabexpand in Makefiles
 au BufNewFile,BufRead Makefile set noexpandtab
-
-"highlight WhitespaceEOL ctermbg=yellow guibg=red
-"match WhitespaceEOL /\s\+$/
-"autocmd ColorScheme * highlight WhitespaceEOL ctermbg=red guibg=red
-
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
 "highlight WhitespaceEOL ctermbg=yellow guibg=red
 "match WhitespaceEOL /\s\+$/
@@ -129,13 +127,13 @@ noremap <down> <nop>
 
 let mapleader = "-"
 
-
 " $VIMRC Editing
 
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Reload the source when writing to $MYVIMRC
-autocmd BufNewFile,BufRead $MYVIMRC nnoremap :w<cr> :w<cr> :source $MYVIMRC<cr>
-autocmd BufNewFile,BufRead $MYVIMRC nnoremap :wq<cr> :wq<cr> :source $MYVIMRC<cr>
-" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup reload_source
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
