@@ -74,9 +74,6 @@ autocmd FileType tex,bib,plaintex,markdown set spell
 autocmd FileType c,h,cpp,hpp,cc setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType ruby setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-au BufNewFile,BufRead *.soy set filetype=html
-au BufNewFile,BufRead *.md set filetype=markdown
-
 " Prevent tabexpand in Makefiles
 au BufNewFile,BufRead Makefile set noexpandtab
 
@@ -93,8 +90,11 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 "autocmd ColorScheme * highlight WhitespaceEOL ctermbg=red guibg=red
 
 highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+augroup extra_whitespace
+    autocmd!
+    autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+augroup END
 
 syntax on
 colorscheme jellybeans
