@@ -20,4 +20,7 @@ python: .PHONEY
 js: .PHONEY
 	ln -sf $(CWD)/python/jshintrc ~/.jshintrc
 
+tmux: .PHONEY
+	ln -sf $(CWD)/tmux/tmux.conf ~/.tmux.conf
+
 .PHONEY:
