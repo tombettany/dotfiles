@@ -33,6 +33,19 @@ Plugin 'wavded/vim-stylus'
 Plugin 'tpope/vim-fugitive'
 " Surround
 Plugin 'tpope/vim-surround'
+" Consistent configurations between editors
+Plugin 'editorconfig/editorconfig-vim'
+" Typescript syntax
+Plugin 'leafgarland/typescript-vim'
+" Async!
+Plugin 'tpope/vim-dispatch'
+" Git status
+Plugin 'airblade/vim-gitgutter'
+" 'Safe' environment for editing code blocks
+Plugin 'ferranpm/vim-isolate'
+" DBMS interface
+Plugin 'cosminadrianpopescu/vim-sql-workbench'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
