@@ -11,6 +11,11 @@ vim: .PHONEY
 	ln -sf ~/.vim/vimrc ~/.vimrc
 	vim +PluginInstall +qall
 
+neovim: .PHONEY
+   mkdir -p ~/.config/nvim
+	ln -sf $(CWD)/vim/* ~/.config/nvim/
+	ln -sf $(CWD)/vim/vimrc ~/.config/nvim/init.vim
+
 git: .PHONEY
 	ln -sf $(CWD)/git/gitconfig ~/.gitconfig
 
