@@ -11,8 +11,14 @@ vim: .PHONEY
 	ln -sf ~/.vim/vimrc ~/.vimrc
 	vim +PluginInstall +qall
 
-neovim: .PHONEY
-   mkdir -p ~/.config/nvim
+you-complete-me: .PHONEY
+	cd vim/bundle/YouCompleteMe && \
+	./install.py --clang-completer --omnisharp-completer --gocode-completer
+
+neovim-python-support: .PHONEY
+	sudo pip install neovim
+
+neovim: .PHONEY you-complete-me neovim-python-support
 	ln -sf $(CWD)/vim/* ~/.config/nvim/
 	ln -sf $(CWD)/vim/vimrc ~/.config/nvim/init.vim
 

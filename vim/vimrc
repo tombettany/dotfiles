@@ -15,8 +15,15 @@ Plugin 'scrooloose/syntastic'
 " Tagbar
 " requires exuberant-ctags
 Plugin 'majutsushi/tagbar'
-" SuperTab
-Plugin 'vim-scripts/supertab'
+
+if v:version > 703
+    " YouCompleteMe
+    " Only supported from v7.3.598
+    Plugin 'Valloric/YouCompleteMe'
+else
+    " SuperTab
+    Plugin 'vim-scripts/supertab'
+endif
 " Switch between c source and headers
 Plugin 'vim-scripts/a.vim'
 " Line diff
