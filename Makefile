@@ -11,6 +11,7 @@ vim: .PHONEY
 	ln -sf ~/.vim/vimrc ~/.vimrc
 	vim +PluginInstall +qall
 
+# FIXME: Fails if vim version is too low
 you-complete-me: .PHONEY
 	cd vim/bundle/YouCompleteMe && \
 	./install.py --clang-completer --omnisharp-completer --gocode-completer
