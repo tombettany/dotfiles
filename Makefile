@@ -20,6 +20,7 @@ neovim-python-support: .PHONEY
 	sudo pip install neovim
 
 neovim: .PHONEY you-complete-me neovim-python-support
+	mkdir -p ~/.config/nvim
 	ln -sf $(CWD)/vim/* ~/.config/nvim/
 	ln -sf $(CWD)/vim/vimrc ~/.config/nvim/init.vim
 
