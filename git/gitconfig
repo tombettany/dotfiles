@@ -1,5 +1,5 @@
 [user]
-	email = tom@kano.me
+	email = tom.bettany@gmail.com
 	name = Tom Bettany
 [core]
     editor = vim
@@ -11,3 +11,5 @@
 	prompt = false
 [alias]
 	d = difftool
+[alias]
+	set-work-repo = "config user.email 'tom@kano.me'"
