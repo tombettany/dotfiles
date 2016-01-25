@@ -119,6 +119,7 @@ augroup extra_whitespace
 augroup END
 
 syntax on
+let &t_Co=256
 colorscheme jellybeans
 
 " Use x11 clipboard
