@@ -156,6 +156,7 @@ let mapleader = "-"
 
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>fj :%!python -m json.tool<cr>
 
 " Reload the source when writing to $MYVIMRC
 augroup reload_source
