@@ -1,0 +1,21 @@
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
+export GOPATH="$HOME/Documents/Development/go"
+
+KANO_BASE="$HOME/Documents/Development/Kano"
+KANO_PACKAGES="kano-applets
+               kano-settings
+               make-light
+               kano-blocks
+               make-pong
+               make-minecraft
+               kano-toolset
+               kano-peripherals
+               kano-widgets
+               kano-profile"
+
+for PKG in $KANO_PACKAGES; do
+    export PYTHONPATH="$PYTHONPATH:$KANO_BASE/$PKG"
+done
