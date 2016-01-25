@@ -11,5 +11,7 @@
 	prompt = false
 [alias]
 	d = difftool
+[merge]
+	tool = vimdiff
 [alias]
 	set-work-repo = "config user.email 'tom@kano.me'"
