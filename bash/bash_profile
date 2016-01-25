@@ -2,6 +2,10 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
+if [ -f $HOME/Documents/Development/dotfiles/tmux/tmux_completion ]; then
+    . $HOME/Documents/Development/dotfiles/tmux/tmux_completion
+fi
+
 export GOPATH="$HOME/Documents/Development/go"
 
 KANO_BASE="$HOME/Documents/Development/Kano"
