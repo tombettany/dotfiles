@@ -34,7 +34,8 @@ js: .PHONEY
 	ln -sf $(CWD)/python/jshintrc ~/.jshintrc
 
 tmux: .PHONEY
-	ln -sf $(CWD)/tmux/tmux.conf ~/.tmux.conf
+	ln -sf $(CWD)/tmux ~/.tmux
+	ln -sf ~/.tmux/tmux.conf ~/.tmux.conf
 
 bash: .PHONEY
 	ln -sf $(CWD)/bash/bash_profile ~/.bash_profile

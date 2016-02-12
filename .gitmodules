@@ -2,3 +2,6 @@
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/gmarik/vundle.git
 	branch = master
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

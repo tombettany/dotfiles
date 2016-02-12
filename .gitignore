@@ -2,3 +2,7 @@ vim/bundle
 vim/init.vim
 .netrwhist
 .*.swp
+
+tmux/plugins/tmux-resurrect
+tmux/plugins/tmux-sensible
+tmux/resurrect
