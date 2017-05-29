@@ -40,6 +40,8 @@ Plugin 'wavded/vim-stylus'
 Plugin 'tpope/vim-fugitive'
 " Surround
 Plugin 'tpope/vim-surround'
+" Sessioning
+Plugin 'tpope/vim-obsession'
 " Consistent configurations between editors
 Plugin 'editorconfig/editorconfig-vim'
 " Typescript syntax
@@ -171,4 +173,9 @@ nnoremap <leader>fj :%!python -m json.tool<cr>
 augroup reload_source
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
+augroup load_session
+    autocmd!
+    " autocmd SessionLoadPost * :Obsession
 augroup END
