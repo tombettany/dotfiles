@@ -15,3 +15,7 @@
 	tool = vimdiff
 [alias]
 	set-work-repo = "config user.email 'tom@kano.me'"
+[alias]
+	rc-rebase-prep = "~/Documents/Development/Kano/dev-team/release_scripts/git-rebase-prep"
+[alias]
+	rc-rebase-finish = "~/Documents/Development/Kano/dev-team/release_scripts/git-rebase-finish"

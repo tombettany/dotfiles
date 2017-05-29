@@ -27,5 +27,7 @@ done
 # alias docker-init="eval \'$(docker-machine env default)\'"
 alias docker-init="docker-machine env default"
 
+export PATH="$PATH:$HOME/Documents/Development/Kano/dev-team/release_scripts"
+
 # Rust
 source $HOME/.cargo/env
