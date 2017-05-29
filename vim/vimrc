@@ -60,6 +60,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 " QML Syntax Highlighting
 Plugin 'peterhoeg/vim-qml'
+" Puppet syntax highlighting
+Plugin 'rodjek/vim-puppet'
 " Rust syntax highlighting
 Plugin 'rust-lang/rust.vim'
 " Snippets engine
