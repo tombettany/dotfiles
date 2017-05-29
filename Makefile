@@ -17,7 +17,7 @@ you-complete-me: .PHONEY
 	./install.py --clang-completer --omnisharp-completer --gocode-completer
 
 neovim-python-support: .PHONEY
-	sudo pip install neovim
+	pip install neovim
 
 neovim: .PHONEY you-complete-me neovim-python-support
 	mkdir -p ~/.config/nvim
