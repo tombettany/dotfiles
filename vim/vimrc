@@ -60,6 +60,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 " QML Syntax Highlighting
 Plugin 'peterhoeg/vim-qml'
+" Rust syntax highlighting
+Plugin 'rust-lang/rust.vim'
 " Snippets engine
 Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine

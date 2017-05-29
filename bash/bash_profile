@@ -23,3 +23,6 @@ KANO_PACKAGES="kano-applets
 for PKG in $KANO_PACKAGES; do
     export PYTHONPATH="$PYTHONPATH:$KANO_BASE/$PKG"
 done
+
+# Rust
+source $HOME/.cargo/env
