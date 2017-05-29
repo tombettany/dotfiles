@@ -19,6 +19,8 @@ Plugin 'majutsushi/tagbar'
 if v:version > 703
     " YouCompleteMe
     " Only supported from v7.3.598
+    " After updating, it is likely that it will need recompiling:
+    "     ~/.vim/bundle/YouCompleteMe/install.py
     Plugin 'Valloric/YouCompleteMe'
 else
     " SuperTab
