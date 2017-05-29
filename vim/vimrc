@@ -56,6 +56,8 @@ Plugin 'cosminadrianpopescu/vim-sql-workbench'
 Plugin 'kien/ctrlp.vim'
 " Silver searcher
 Plugin 'rking/ag.vim'
+" QML Syntax Highlighting
+Plugin 'peterhoeg/vim-qml'
 
 
 " All of your Plugins must be added before the following line
@@ -153,9 +155,12 @@ noremap <down> <nop>
 let mapleader = "-"
 
 " $VIMRC Editing
-
 nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Compile and run a Qt app
+nnoremap <leader>rqt :!qmake && make && open ./*.app<cr>
+
 nnoremap <leader>fj :%!python -m json.tool<cr>
 
 " Reload the source when writing to $MYVIMRC
