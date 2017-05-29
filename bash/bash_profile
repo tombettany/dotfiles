@@ -24,5 +24,8 @@ for PKG in $KANO_PACKAGES; do
     export PYTHONPATH="$PYTHONPATH:$KANO_BASE/$PKG"
 done
 
+# alias docker-init="eval \'$(docker-machine env default)\'"
+alias docker-init="docker-machine env default"
+
 # Rust
 source $HOME/.cargo/env
