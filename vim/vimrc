@@ -58,6 +58,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 " QML Syntax Highlighting
 Plugin 'peterhoeg/vim-qml'
+" Snippets engine
+Plugin 'SirVer/ultisnips'
+" Snippets are separated from the engine
+Plugin 'honza/vim-snippets'
 
 
 " All of your Plugins must be added before the following line
