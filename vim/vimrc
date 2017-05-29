@@ -64,6 +64,9 @@ Plugin 'peterhoeg/vim-qml'
 Plugin 'rodjek/vim-puppet'
 " Rust syntax highlighting
 Plugin 'rust-lang/rust.vim'
+" Netrw enhancement
+Plugin 'tpope/vim-vinegar'
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 " Snippets engine
 Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine
