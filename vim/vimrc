@@ -11,17 +11,162 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 
 " Syntastic
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
+" let g:syntastic_cpp_checkers = ['cppcheck', 'cppclean', 'cpplint',  'gcc']
+" " let g:syntastic_cpp_checkers = ['verapp']
+" let g:syntastic_c_checkers = ['cppcheck', 'cppclean', 'cpplint', 'splint',  'gcc']
+" let g:syntastic_cpp_cpplint_exec = 'cpplint'
+" let g:syntastic_sh_checkers = ['bashate', 'sh']
+
+" Neomake - tool to run jobs automatically in the background
+Plugin 'neomake/neomake'
+
 " Tagbar
 " requires exuberant-ctags
 Plugin 'majutsushi/tagbar'
 
-if v:version > 703
+if v:version > 800
+    " Try CoC
+    Plugin 'neoclide/coc.nvim'
+
+    " if hidden is not set, TextEdit might fail.
+    set hidden
+
+    " Some servers have issues with backup files, see #649
+    set nobackup
+    set nowritebackup
+
+    " Better display for messages
+    set cmdheight=2
+
+    " You will have bad experience for diagnostic messages when it's default 4000.
+    set updatetime=300
+
+    " don't give |ins-completion-menu| messages.
+    set shortmess+=c
+
+    " always show signcolumns
+    set signcolumn=yes
+
+    " Use tab for trigger completion with characters ahead and navigate.
+    " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+    inoremap <silent><expr> <TAB>
+          \ pumvisible() ? "\<C-n>" :
+          \ <SID>check_back_space() ? "\<TAB>" :
+          \ coc#refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+    " Use <c-space> to trigger completion.
+    inoremap <silent><expr> <c-space> coc#refresh()
+
+    " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+    " Coc only does snippet and additional edit on confirm.
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    " Or use `complete_info` if your vim support it, like:
+    " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+    " Use `[g` and `]g` to navigate diagnostics
+    nmap <silent> [g <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+    " Remap keys for gotos
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+
+    " Use K to show documentation in preview window
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+    function! s:show_documentation()
+      if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+      else
+        call CocAction('doHover')
+      endif
+    endfunction
+
+    " Highlight symbol under cursor on CursorHold
+    autocmd CursorHold * silent call CocActionAsync('highlight')
+
+    " Remap for rename current word
+    nmap <leader>rn <Plug>(coc-rename)
+
+    " Remap for format selected region
+    xmap <leader>f  <Plug>(coc-format-selected)
+    nmap <leader>f  <Plug>(coc-format-selected)
+
+    augroup mygroup
+      autocmd!
+      " Setup formatexpr specified filetype(s).
+      autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+      " Update signature help on jump placeholder
+      autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    augroup end
+
+    " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+    xmap <leader>a  <Plug>(coc-codeaction-selected)
+    nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+    " Remap for do codeAction of current line
+    nmap <leader>ac  <Plug>(coc-codeaction)
+    " Fix autofix problem of current line
+    nmap <leader>qf  <Plug>(coc-fix-current)
+
+    " Create mappings for function text object, requires document symbols feature of languageserver.
+    xmap if <Plug>(coc-funcobj-i)
+    xmap af <Plug>(coc-funcobj-a)
+    omap if <Plug>(coc-funcobj-i)
+    omap af <Plug>(coc-funcobj-a)
+
+    " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+    nmap <silent> <C-d> <Plug>(coc-range-select)
+    xmap <silent> <C-d> <Plug>(coc-range-select)
+
+    " Use `:Format` to format current buffer
+    command! -nargs=0 Format :call CocAction('format')
+
+    " Use `:Fold` to fold current buffer
+    command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+    " use `:OR` for organize import of current buffer
+    command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+    " Add status line support, for integration with other plugin, checkout `:h coc-status`
+    set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+    " Using CocList
+    " Show all diagnostics
+    nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+    " Manage extensions
+    nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+    " Show commands
+    nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+    " Find symbol of current document
+    nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+    " Search workspace symbols
+    nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+    " Do default action for next item.
+    nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+    " Do default action for previous item.
+    nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+    " Resume latest coc list
+    nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+elseif v:version > 703
     " YouCompleteMe
     " Only supported from v7.3.598
     " After updating, it is likely that it will need recompiling:
     "     ~/.vim/bundle/YouCompleteMe/install.py
     Plugin 'Valloric/YouCompleteMe'
+    " Disable YCM diagnostics UI so that C checkers are activated
+    let g:ycm_show_diagnostics_ui = 0
+    " YouCompleteMe compile flags generator
+    Plugin 'rdnetto/YCM-Generator'
 else
     " SuperTab
     Plugin 'vim-scripts/supertab'
@@ -55,7 +200,7 @@ Plugin 'airblade/vim-gitgutter'
 " 'Safe' environment for editing code blocks
 Plugin 'ferranpm/vim-isolate'
 " DBMS interface
-Plugin 'cosminadrianpopescu/vim-sql-workbench'
+" Plugin 'cosminadrianpopescu/vim-sql-workbench'
 " Fuzzy finder
 Plugin 'kien/ctrlp.vim'
 " Silver searcher
@@ -66,13 +211,19 @@ Plugin 'peterhoeg/vim-qml'
 Plugin 'rodjek/vim-puppet'
 " Rust syntax highlighting
 Plugin 'rust-lang/rust.vim'
+" Svelte syntax highlighting
+Plugin 'evanleck/vim-svelte'
 " Netrw enhancement
 Plugin 'tpope/vim-vinegar'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-" Snippets engine
-Plugin 'SirVer/ultisnips'
-" Snippets are separated from the engine
-Plugin 'honza/vim-snippets'
+if v:version < 800
+    " Not compatible with CoC
+
+    " Snippets engine
+    Plugin 'SirVer/ultisnips'
+    " Snippets are separated from the engine
+    Plugin 'honza/vim-snippets'
+endif
 
 
 " All of your Plugins must be added before the following line
@@ -100,6 +251,7 @@ set backspace=2
 set showmatch
 set ruler
 
+set tabpagemax=100
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -176,6 +328,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Compile and run a Qt app
 nnoremap <leader>rqt :!qmake && make && open ./*.app<cr>
 
+" Pretty-print file as JSON
 nnoremap <leader>fj :%!python -m json.tool<cr>
 
 " Reload the source when writing to $MYVIMRC
@@ -188,3 +341,27 @@ augroup load_session
     autocmd!
     " autocmd SessionLoadPost * :Obsession
 augroup END
+
+call neomake#configure#automake('wni')
+" let g:neomake_verbose=3
+" let g:neomake_logfile='/tmp/error.log'
+let g:neomake_python_enabled_makers = ['pylint', 'flake8']
+
+
+" g:neomake: {
+"     'automake': {
+"         'ignore_filetypes': [
+"             'startify',
+"         ],
+"         'events': {
+"             'TextChangedI': {},
+"             'BufWritePost': {
+"             'delay': 0,
+"             },
+"             'TextChanged': {},
+"         },
+"     },
+" }
+" b:neomake: unset
+
+let g:neomake_cpp_enabled_makers = ['cpplint']
