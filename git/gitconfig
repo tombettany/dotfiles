@@ -19,3 +19,8 @@
 	rc-rebase-prep = "~/Documents/Development/Kano/dev-team/release_scripts/git-rebase-prep"
 [alias]
 	rc-rebase-finish = "~/Documents/Development/Kano/dev-team/release_scripts/git-rebase-finish"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
