@@ -357,7 +357,7 @@ augroup END
 call neomake#configure#automake('wni')
 " let g:neomake_verbose=3
 " let g:neomake_logfile='/tmp/error.log'
-let g:neomake_python_enabled_makers = ['pylint', 'flake8']
+let g:neomake_python_enabled_makers = ['pylint', 'flake8', 'mypy']
 
 
 " g:neomake: {
