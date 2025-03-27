@@ -377,3 +377,5 @@ let g:neomake_python_enabled_makers = ['pylint', 'flake8', 'mypy']
 " b:neomake: unset
 
 let g:neomake_cpp_enabled_makers = ['cpplint']
+
+let g:vimtex_compiler_method = 'tectonic'
