@@ -10,6 +10,7 @@ vim: .PHONEY
 	ln -sf $(CWD)/vim ~/.vim
 	ln -sf ~/.vim/vimrc ~/.vimrc
 	vim +PluginInstall +qall
+	vim +"CocInstall coc-html coc-eslint coc-clang-format-style-options coc-tsserver coc-sql coc-sh coc-json coc-jedi coc-go coc-docker coc-cmake coc-graphql coc-texlab"
 
 # FIXME: Fails if vim version is too low
 you-complete-me: .PHONEY
