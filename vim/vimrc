@@ -215,6 +215,18 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'evanleck/vim-svelte'
 " Netrw enhancement
 Plugin 'tpope/vim-vinegar'
+" GraphQL syntax highlighting
+Plugin 'jparise/vim-graphql'
+" Open Policy Agent (OPA) Rego syntax highlighting
+Plugin 'tsandall/vim-rego'
+" Go syntax
+Plugin 'fatih/vim-go'
+" Terraform syntax
+Plugin 'hashivim/vim-terraform'
+" LaTeX syntax
+Plugin 'lervag/vimtex'
+" LaTeX fold tools
+Plugin 'matze/vim-tex-fold'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 if v:version < 800
     " Not compatible with CoC
