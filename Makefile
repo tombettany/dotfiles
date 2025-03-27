@@ -41,4 +41,8 @@ tmux: .PHONEY
 bash: .PHONEY
 	ln -sf $(CWD)/bash/bash_profile ~/.bash_profile
 
+tools: .PHONEY
+	brew install go hashicorp/tap/terraform-ls
+	go install golang.org/x/tools/gopls@latest
+
 .PHONEY:
